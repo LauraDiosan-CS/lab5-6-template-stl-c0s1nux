@@ -6,16 +6,18 @@
 using namespace std;
 
 class Repository {
-private:
+protected:
     list<Car> elem;
-    int size;
 public:
     Repository();
     ~Repository();
-    void addElem(const Car&);
+    void addElem(Car&);
     list<Car> getAll();
     bool checkIfCarIsOk(Car);
     bool removeElem(Car);
     bool updateElem(Car, char*, char*, char*);
     bool checkIfCarIsOkForUpdate(Car);
+    void clearForFile();
+    bool checkIfCarCanBeDeleted(Car);
+    Car getCarFromAPosition(int);
 };

@@ -4,17 +4,25 @@
 using namespace std;
 
 Service::Service() {
-	Car car1("Alex", "BT06LNB", "liber"), car2("yo", "BT07LNB", "ocupat");
-	repository.addElem(car1);
-	repository.addElem(car2);
+
+}
+
+Service::Service(const RepositoryFile& repo)
+{
+	repositoryFile = repo;
+}
+
+void Service::setParkngSize(int number) {
+	parkingSpace = number;
 }
 
 bool Service::addCar(char* name, char* number, char* status) {
 	Car newCar(name, number, status);
-	bool carIsOk = repository.checkIfCarIsOk(newCar);
+	bool carIsOk = repositoryFile.checkIfCarIsOk(newCar);
 	if (carIsOk == true)
 	{
-		repository.addElem(newCar);
+		repositoryFile.addElem(newCar);
+		repositoryFile.saveToFile();
 		return true;
 	}
 	else
@@ -23,7 +31,7 @@ bool Service::addCar(char* name, char* number, char* status) {
 
 bool Service::removeCar(char* name, char* number, char* status) {
 	Car carWeAreRemoving(name, number, status);
-	bool wasRemoved = repository.removeElem(carWeAreRemoving);
+	bool wasRemoved = repositoryFile.removeElem(carWeAreRemoving);
 	if (wasRemoved == true)
 		return true;
 	else
@@ -32,7 +40,7 @@ bool Service::removeCar(char* name, char* number, char* status) {
 
 bool Service::updateCar(char* oldName, char* oldNumber, char* oldStatus, char* newName, char* newNumber, char* newStatus) {
 	Car carWeAreUpdating(oldName, oldNumber, oldStatus);
-	bool wasUpdated = repository.updateElem(carWeAreUpdating, newName, newNumber, newStatus);
+	bool wasUpdated = repositoryFile.updateElem(carWeAreUpdating, newName, newNumber, newStatus);
 	if (wasUpdated == true)
 		return true;
 	else
@@ -40,7 +48,7 @@ bool Service::updateCar(char* oldName, char* oldNumber, char* oldStatus, char* n
 }
 
 list<Car> Service::getAllCars() {
-	return repository.getAll();
+	return repositoryFile.getAll();
 }
 
 Service::~Service() {

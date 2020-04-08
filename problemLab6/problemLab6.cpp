@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-	cout << "Testing the app!";
+	/*cout << "Testing the app!";
 	Sleep(4000);
 	system("CLS");
 	creationCarTests();
@@ -28,8 +28,10 @@ int main() {
 	Sleep(1000);
 	cout << ".";
 	Sleep(1000);
-	system("CLS");
-	UI UI;
+	system("CLS");*/
+	RepositoryFile repository("fileWithCars.txt");
+	Service service(repository);
+	UI UI(service);
 	UI.runApplication();
 	return 0;
 }

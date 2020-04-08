@@ -151,6 +151,7 @@
     <ClCompile Include="carTests.cpp" />
     <ClCompile Include="problemLab6.cpp" />
     <ClCompile Include="repository.cpp" />
+    <ClCompile Include="repositoryFile.cpp" />
     <ClCompile Include="repositoryTests.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="serviceTests.cpp" />
@@ -160,10 +161,14 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="carTests.h" />
     <ClInclude Include="repository.h" />
+    <ClInclude Include="repositoryFile.h" />
     <ClInclude Include="repositoryTests.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="serviceTests.h" />
     <ClInclude Include="UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="fileWithCars.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

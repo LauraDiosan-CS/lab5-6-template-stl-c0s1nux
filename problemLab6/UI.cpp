@@ -7,6 +7,10 @@ using namespace std;
 UI::UI() {
 }
 
+UI::UI(const Service& serv) {
+	service = serv;
+}
+
 void UI::showMenu() {
 	cout << "-------------------------------------------------------------\n";
 	cout << "1. Add car.\n";

@@ -18,15 +18,15 @@ void serviceTests() {
 	char* f = new char[10];
 	strcpy_s(a, sizeof "yo", "yo");
 	strcpy_s(b, sizeof "B09LKC", "B09LKC");
-	strcpy_s(c, sizeof "liber", "liber");
+	strcpy_s(c, sizeof "ocupat", "ocupat");
 	strcpy_s(d, sizeof "test", "test");
 	strcpy_s(e, sizeof "B999LUL", "B999LUL");
 	strcpy_s(f, sizeof "ocupat", "ocupat");
-	Car aCar("yo", "B09LKC", "liber");
+	Car aCar("yo", "B09LKC", "ocupat");
 	Car carAfterUpdate(d, e, f);
 	bool t = serv.addCar(a, b, c);
 	assert(t == true);
-	assert(serv.getAllCars().size() == 3);
+	assert(serv.getAllCars().size() == 4);
 	assert(serv.getAllCars().back() == aCar);
 	Sleep(1000);
 	cout << ".";
@@ -35,7 +35,7 @@ void serviceTests() {
 	Sleep(1000);
 	cout << ".";
 	t = serv.removeCar(d, e, f);
-	assert(serv.getAllCars().size() == 2);
+	assert(serv.getAllCars().size() == 4);
 	Sleep(1000);
 	cout << ".\n";
 	delete[]a;

@@ -4,14 +4,14 @@
 using namespace std;
 
 Repository::Repository() {
-	this->size = 100;
+
 }
 
 Repository::~Repository() {
-	this->size = 0;
+
 }
 
-void Repository::addElem(const Car& aCar) {
+void Repository::addElem(Car& aCar) {
 	this->elem.push_back(aCar);
 }
 
@@ -90,4 +90,27 @@ bool Repository::checkIfCarIsOkForUpdate(Car aCar) {
 	if (counter != -1 and counter != 0)
 		carOk = false;
 	return carOk;
+}
+
+void Repository::clearForFile() {
+	elem.clear();
+}
+
+bool Repository::checkIfCarCanBeDeleted(Car car1) {
+	if (strcmp(car1.getStatus(), "liber") == 0)
+		return true;
+	else
+		return false;
+}
+
+Car Repository::getCarFromAPosition(int position) {
+	list<Car>::iterator it;
+	int index = 0;
+	for (it = elem.begin(); it != elem.end(); it++)
+	{
+		if (index == position)
+			return *(it);
+		index++;
+
+	}
 }

@@ -7,6 +7,7 @@ private:
 	Service service;
 public:
 	UI();
+	UI(const Service&);
 	void showMenu();
 	void addCar();
 	void removeCar();
