@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
 class Car {
 private:
@@ -13,9 +15,10 @@ public:
 	char* getName();
 	char* getNumber();
 	char* getStatus();
-	void setName(char*);
-	void setNumber(char*);
-	void setStatus(char*);
+	void setName(const char*);
+	void setNumber(const char*);
+	void setStatus(const char*);
 	Car& operator=(const Car&);
 	~Car();
+	friend ostream& operator <<(ostream& os, Car aCar);
 };

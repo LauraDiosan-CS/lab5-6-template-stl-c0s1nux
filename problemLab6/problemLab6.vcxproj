@@ -152,12 +152,18 @@
     <ClCompile Include="problemLab6.cpp" />
     <ClCompile Include="repository.cpp" />
     <ClCompile Include="repositoryTests.cpp" />
+    <ClCompile Include="Service.cpp" />
+    <ClCompile Include="serviceTests.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="carTests.h" />
     <ClInclude Include="repository.h" />
     <ClInclude Include="repositoryTests.h" />
+    <ClInclude Include="Service.h" />
+    <ClInclude Include="serviceTests.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

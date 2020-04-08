@@ -14,4 +14,8 @@ public:
     ~Repository();
     void addElem(const Car&);
     list<Car> getAll();
+    bool checkIfCarIsOk(Car);
+    bool removeElem(Car);
+    bool updateElem(Car, char*, char*, char*);
+    bool checkIfCarIsOkForUpdate(Car);
 };

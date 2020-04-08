@@ -33,15 +33,15 @@ bool Car::operator==(const Car& aCar) {
 }
 
 char* Car::getName() {
-	return name;
+	return this->name;
 }
 
 char* Car::getNumber() {
-	return number;
+	return this->number;
 }
 
 char* Car::getStatus() {
-	return status;
+	return this->status;
 }
 
 Car::~Car() {
@@ -61,22 +61,32 @@ Car::~Car() {
 	}
 }
 
-void Car::setName(char* aName) {
-	if (name) delete[]name;
+void Car::setName(const char* aName) {
+	if (name) {
+		delete[]name;
+		name = NULL;
+	}
 	name = new char[strlen(aName) + 1];
-	strcpy_s(name, strlen(aName) + 1, aName);
+	strcpy_s(this->name, strlen(aName) + 1, aName);
 }
 
-void Car::setNumber(char* aNumber) {
-	if (number) delete[]number;
+void Car::setNumber(const char* aNumber) {
+	if (number) {
+		delete[]number;
+		number = NULL;
+	}
 	number = new char[strlen(aNumber) + 1];
-	strcpy_s(number, strlen(aNumber) + 1, aNumber);
+	strcpy_s(this->number, strlen(aNumber) + 1, aNumber);
 }
 
-void Car::setStatus(char* aStatus) {
-	if (status) delete[]status;
+void Car::setStatus(const char* aStatus) {
+	if (status)
+	{
+		delete[]status;
+		status = NULL;
+	}
 	status = new char[strlen(aStatus) + 1];
-	strcpy_s(status, strlen(aStatus) + 1, aStatus);
+	strcpy_s(this->status, strlen(aStatus) + 1, aStatus);
 }
 
 Car& Car::operator=(const Car& aCar) {
@@ -91,4 +101,9 @@ Car& Car::operator=(const Car& aCar) {
 	status = new char[strlen(aCar.status) + 1];
 	strcpy_s(status, strlen(aCar.status) + 1, aCar.status);
 	return *this;
+}
+
+ostream& operator<<(ostream& os, Car aCar) {
+	os <<"Owner: "<< aCar.getName() << " | License Plate: " << aCar.getNumber() << " | Status: " << aCar.getStatus() <<" |"<<"\n";
+	return os;
 }
