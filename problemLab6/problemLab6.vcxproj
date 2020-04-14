@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="carTests.cpp" />
+    <ClCompile Include="parkingTests.cpp" />
     <ClCompile Include="problemLab6.cpp" />
     <ClCompile Include="repository.cpp" />
     <ClCompile Include="repositoryFile.cpp" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="carTests.h" />
+    <ClInclude Include="parkingTests.h" />
     <ClInclude Include="repository.h" />
     <ClInclude Include="repositoryFile.h" />
     <ClInclude Include="repositoryTests.h" />
@@ -169,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="fileWithCars.txt" />
+    <Text Include="testCars.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

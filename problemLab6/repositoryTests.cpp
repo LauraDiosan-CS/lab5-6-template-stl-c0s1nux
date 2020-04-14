@@ -1,4 +1,4 @@
-#include "repository.h"
+#include "repositoryFile.h"
 #include <assert.h>
 #include <cstring>
 #include <iostream>
@@ -9,7 +9,7 @@ using namespace std;
 void repositoryTests() {
 	cout << "-------------------------------------------------------------\n";
 	cout << "Beginning tests for repository.";
-	Repository repo;
+	RepositoryFile repo("testCars.txt");
 	bool yo;
 	Car car1("1", "2", "3");
 	Car car2("4", "5", "6");
@@ -17,13 +17,17 @@ void repositoryTests() {
 	Car car4("AlexA", "BT06LNT", "liber");
 	Car car5("yo", "BT09LBV", "yoooo");
 	repo.addElem(car1);
+	repo.saveToFile();
 	repo.addElem(car2);
+	repo.saveToFile();
 	repo.addElem(car4);
+	repo.saveToFile();
 	assert(repo.getAll().front() == car1);
 	assert(repo.getAll().back() == car4);
 	Sleep(1000);
 	cout << ".";
 	yo = repo.removeElem(car4);
+	repo.saveToFile();
 	assert(repo.getAll().back() == car2);
 	Sleep(1000);
 	cout << ".";
@@ -34,6 +38,7 @@ void repositoryTests() {
 	strcpy_s(b, sizeof "B09LKC", "B09LKC");
 	strcpy_s(c, sizeof "liber", "liber");
 	bool t = repo.updateElem(car2, a, b, c);
+	repo.saveToFile();
 	delete[]a;
 	delete[]b;
 	delete[]c;

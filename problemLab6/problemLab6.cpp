@@ -2,20 +2,23 @@
 #include <iostream>
 #include "repositoryTests.h"
 #include "serviceTests.h"
+#include "parkingTests.h"
 #include "UI.h"
 #include <Windows.h>
 
 using namespace std;
 
 int main() {
-	/*cout << "Testing the app!";
+	cout << "Testing the app!";
 	Sleep(4000);
 	system("CLS");
 	creationCarTests();
 	system("CLS");
-	repositoryTests();
+	repositoryTests(); 
 	system("CLS");
 	serviceTests();
+	system("CLS");
+	parkingTests();
 	system("CLS");
 	cout << "All tests passed! ";
 	Sleep(1000);
@@ -28,7 +31,7 @@ int main() {
 	Sleep(1000);
 	cout << ".";
 	Sleep(1000);
-	system("CLS");*/
+	system("CLS");
 	RepositoryFile repository("fileWithCars.txt");
 	Service service(repository);
 	UI UI(service);

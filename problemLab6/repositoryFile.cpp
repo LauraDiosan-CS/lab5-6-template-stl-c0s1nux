@@ -3,12 +3,12 @@
 #include <string>
 using namespace std;
 
-RepositoryFile::RepositoryFile():Repository()
+RepositoryFile::RepositoryFile():Repository<Car>()
 {
 	fis = "";
 }
 
-RepositoryFile::RepositoryFile(const char* fileName) : Repository()
+RepositoryFile::RepositoryFile(const char* fileName) : Repository<Car>()
 {
 	elem.clear();
 	fis = fileName;
@@ -18,7 +18,7 @@ RepositoryFile::RepositoryFile(const char* fileName) : Repository()
 	char* status = new char[10];
 	while (!f.eof()) {
 		f >> name >> number >> status;
-		if (name != "" && number!= "" && (status == "liber" || status=="ocupat")) {
+		if (name != "" && number!= "" && (strcmp(status, "liber") == 0 || strcmp(status, "ocupat")==0)) {
 			Car car1(name, number, status);
 			elem.push_back(car1);
 		}
@@ -49,27 +49,6 @@ void RepositoryFile::loadFromFile(const char* fileName)
 	delete[] status;
 	f.close();
 }
-
-/*bool RepositoryFile::updateElem(Car car1,  char* newName, char* newNumber, char* newStatus)
-{
-	return repository.updateElem(car1, newName, newNumber, newStatus);
-}
-
-
-
-bool RepositoryFile::removeElem(Car car1)
-{
-	return repository.removeElem(car1);
-}
-
-list<Car>RepositoryFile::getAll() {
-	return repository.getAll();
-}
-
-
-bool RepositoryFile::checkIfCarIsOk(Car aCar) {
-	return repository.checkIfCarIsOk(aCar);
-}*/
 
 RepositoryFile::~RepositoryFile()
 {

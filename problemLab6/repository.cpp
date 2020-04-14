@@ -1,40 +1,46 @@
 #include "repository.h"
 #include "Car.h"
 #include <iterator>
+#include <list>
 using namespace std;
 
-Repository::Repository() {
+/*template <class T> Repository<T>::Repository() {
 
 }
 
-Repository::~Repository() {
+template <class T> Repository<T>::~Repository() {
 
 }
 
-void Repository::addElem(Car& aCar) {
+template <class T> void Repository<T>::addElem(T& aCar) {
 	this->elem.push_back(aCar);
 }
 
-bool Repository::removeElem(Car aCar) {
-	list<Car>::iterator it = elem.begin();
+template <class T> int Repository<T>::removeElem(T aCar) {
+	typename list<T>::iterator it = elem.begin();
 	while (it != elem.end()) {
 		if (*(it) == aCar)
 		{
-			elem.erase(it);
-			return true;
+			if (strcmp(it->getStatus(), "liber") == 0)
+			{
+				elem.erase(it);
+				return 1;
+			}
+			else
+				return 2;
 		}
 		it++;
 	}
-	return false;
+	return 3;
 }
 
-bool Repository::updateElem(Car aCar, char* newName, char* newNumber, char* newStatus) {
-	list<Car>::iterator it = elem.begin();
+template <class T> bool Repository<T>::updateElem(T aCar, char* newName, char* newNumber, char* newStatus) {
+	typename list<T>::iterator it = elem.begin();
 	bool wasUpdated;
 	while (it != elem.end()) {
 		if (*(it) == aCar)
 		{
-			Car newCar(newName, newNumber, newStatus);
+			T newCar(newName, newNumber, newStatus);
 			if (checkIfCarIsOkForUpdate(newCar) == true)
 			{
 				(*it) = newCar;
@@ -59,12 +65,12 @@ bool Repository::updateElem(Car aCar, char* newName, char* newNumber, char* newS
 	return wasUpdated;
 }
 
-list<Car> Repository::getAll() {
+template <class T> list<T> Repository<T>::getAll() {
 	return elem;
 }
 
-bool Repository::checkIfCarIsOk(Car aCar) {
-	list<Car>::iterator it = elem.begin();
+template <class T> bool Repository<T>::checkIfCarIsOk(T aCar) {
+	typename list<T>::iterator it = elem.begin();
 	bool carOk = true;
 	while (it != elem.end()) {
 		if (strcmp(it->getNumber(), aCar.getNumber()) == 0)
@@ -75,9 +81,9 @@ bool Repository::checkIfCarIsOk(Car aCar) {
 	}
 	return carOk;
 }
-
-bool Repository::checkIfCarIsOkForUpdate(Car aCar) {
-	list<Car>::iterator it = elem.begin();
+ 
+template <class T> bool Repository<T>::checkIfCarIsOkForUpdate(T aCar) {
+	typename list<T>::iterator it = elem.begin();
 	bool carOk = true;
 	int counter = -1;
 	while (it != elem.end()) {
@@ -92,19 +98,15 @@ bool Repository::checkIfCarIsOkForUpdate(Car aCar) {
 	return carOk;
 }
 
-void Repository::clearForFile() {
-	elem.clear();
-}
-
-bool Repository::checkIfCarCanBeDeleted(Car car1) {
+template <class T> bool Repository<T>::checkIfCarCanBeDeleted(T car1) {
 	if (strcmp(car1.getStatus(), "liber") == 0)
 		return true;
 	else
 		return false;
 }
 
-Car Repository::getCarFromAPosition(int position) {
-	list<Car>::iterator it;
+template <class T> T Repository<T>::getCarFromAPosition(int position) {
+	typename list<T>::iterator it;
 	int index = 0;
 	for (it = elem.begin(); it != elem.end(); it++)
 	{
@@ -114,3 +116,7 @@ Car Repository::getCarFromAPosition(int position) {
 
 	}
 }
+
+template <class T> int Repository<T>::getSize() {
+	return elem.size();
+}*/

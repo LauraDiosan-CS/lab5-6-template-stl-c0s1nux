@@ -42,6 +42,9 @@
     <ClCompile Include="repositoryFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="parkingTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="repository.h">
@@ -68,9 +71,15 @@
     <ClInclude Include="repositoryFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="parkingTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="fileWithCars.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="testCars.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
