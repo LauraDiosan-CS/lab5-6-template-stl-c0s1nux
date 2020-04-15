@@ -8,7 +8,7 @@
 void parkingTests() {
 	cout << "-------------------------------------------------------------\n";
 	cout << "Beginning tests for parking system.";
-	RepositoryFile repo("testCars.txt");
+	RepositoryFile<Car> repo("testCars.txt");
 	Service serv(repo);
 	Car aCar("Alex", "B09LKC", "liber");
 	Car anotherCar("Alex", "BT09LKC", "ocupat");

@@ -5,10 +5,10 @@ class Service {
 private:
 	int parkingLotSpaceSize;
 	int currentParkingLotSize;
-	RepositoryFile repositoryFile;
+	RepositoryFile<Car> repositoryFile;
 public:
 	Service();
-	Service(const RepositoryFile&);
+	Service(const RepositoryFile<Car>&);
 	bool addCar(char*, char*, char*);
 	void setParkingLotSpaceSize(int);
 	int removeCar(char*, char*, char*);

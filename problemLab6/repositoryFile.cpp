@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-RepositoryFile::RepositoryFile():Repository<Car>()
+/*RepositoryFile::RepositoryFile():Repository<Car>()
 {
 	fis = "";
 }
@@ -62,4 +62,4 @@ void RepositoryFile::saveToFile()
 	for (int index = 0; index < elem.size(); index++)
 		f << getCarFromAPosition(index).getName() << " " <<getCarFromAPosition(index).getNumber() << " "<<getCarFromAPosition(index).getStatus() << "\n";
 	f.close();
-}
+}*/

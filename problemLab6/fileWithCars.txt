@@ -1,3 +1,4 @@
-Alex BT06LNB liber
-Alex BT03LNB ocupat
-yo BT04LNB liber
+Alex BT06LNB ocupat
+yo BT05LNB liber
+Alex BT07LNB liber
+yo BT08LNB ocupat

@@ -32,7 +32,7 @@ int main() {
 	cout << ".";
 	Sleep(1000);
 	system("CLS");
-	RepositoryFile repository("fileWithCars.txt");
+	RepositoryFile<Car> repository("fileWithCars.txt");
 	Service service(repository);
 	UI UI(service);
 	UI.runApplication();

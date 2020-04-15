@@ -9,7 +9,7 @@ using namespace std;
 void repositoryTests() {
 	cout << "-------------------------------------------------------------\n";
 	cout << "Beginning tests for repository.";
-	RepositoryFile repo("testCars.txt");
+	RepositoryFile<Car> repo("testCars.txt");
 	bool yo;
 	Car car1("1", "2", "3");
 	Car car2("4", "5", "6");

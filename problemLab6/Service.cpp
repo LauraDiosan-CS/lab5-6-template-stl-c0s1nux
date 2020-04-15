@@ -8,7 +8,7 @@ Service::Service() {
 	
 }
 
-Service::Service(const RepositoryFile& repo)
+Service::Service(const RepositoryFile<Car>& repo)
 {
 	currentParkingLotSize = 0;
 	repositoryFile = repo;

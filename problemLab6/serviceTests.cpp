@@ -9,7 +9,7 @@ using namespace std;
 void serviceTests() {
 	cout << "-------------------------------------------------------------\n";
 	cout << "Beginning tests for service.";
-	RepositoryFile repo("testCars.txt");
+	RepositoryFile<Car> repo("testCars.txt");
 	Service serv(repo);
 	char* a = new char[10];
 	char* b = new char[10];
